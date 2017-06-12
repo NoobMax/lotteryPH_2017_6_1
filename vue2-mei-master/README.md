@@ -2,17 +2,17 @@
 
 > A Vue.js project
 ###技术栈
-``` 
+```
 1、vue2.0 + vue-router + vuex
-2、Axios 请求数据 
+2、Axios 请求数据
 3、Css 可使用 less sass  
-4、Muse-ui UI组件库 
+4、Muse-ui UI组件库
 5、Webpack 打包
 6、使用rem自适应布局
 ```
 ### 前言
 
-项目基本涵盖了vue大部分的用法  页面保守估计有100多个 包括支付 登陆 定位 加载  等等 
+项目基本涵盖了vue大部分的用法  页面保守估计有100多个 包括支付 登陆 等等
 
 ##目录结构
 ```
@@ -35,8 +35,7 @@
 ```      
 ### 项目截图
 
-![首页演示图片](./images/index.png)
-![登陆演示图片](./images/login.png)
+
 
 
 
