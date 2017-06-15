@@ -6,8 +6,8 @@
       <mu-appbar >
         <mu-icon-button icon='menu' slot="right" />
         <!--<mu-icon-button icon='expand_more' slot="right" />-->
-
       </mu-appbar>
+
 
 
   <div class="recommend">
@@ -95,6 +95,7 @@
 <script>
 // import { mapGetters } from 'vuex'
 import footGuide from '../../components/footer/footGuide'
+import lotteryHeader from'../../components/header/lotteryHeader'
 import { setStore } from '../../utils/mUtils.js'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
@@ -135,7 +136,8 @@ export default {
   components: {
     footGuide,
      swiper,
-    swiperSlide
+    swiperSlide,
+    lotteryHeader
   }
 }
 </script>

@@ -13,14 +13,14 @@
       </section>
       <section @click='gotoAddress("/order")'>
         <span><img :src="$route.path.indexOf('order') !== -1 ? '../../../static/images/footer03.png': '../../../static/images/foot03.png'"></span>
-        <span :class='{activeCol:$route.path.indexOf("order") !== -1 ? true : false}'>我的</span>
+        <span :class='{activeCol:$route.path.indexOf("order") !== -1 ? true : false}'>资金管理</span>
       </section>
       <section @click='gotoAddress("/my")'>
         <span><img :src="$route.path.indexOf('my') !== -1 ? '../../../static/images/footer04.png': '../../../static/images/foot04.png'"></span>
-        <span :class='{activeCol:$route.path.indexOf("my") !== -1 ? true : false}'>客服</span>
+        <span :class='{activeCol:$route.path.indexOf("my") !== -1 ? true : false}'>我的</span>
       </section>
     </div>
-  
+
   </div>
 </template>
 
@@ -69,6 +69,3 @@ export default {
   color: #d1506d;
 }
 </style>
-
-
-

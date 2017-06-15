@@ -1,15 +1,9 @@
-// 请求api地址
-// const _baseUrl = 'http://im.ivymei.com' // 开发+
-// http://192.168.1.112/webapi/index.php?app=other&act=index_ banner
+
 import axios from 'axios'
 
 export default {
 
-  // 区域列表
-  getArea(city_id = 440100) { // 默认传入 广州
-    return `/webapi/index.php?app=area&act=info_list&format=json&city_id=${city_id}`
-  },
-  // 套餐列表
+
   getMealList() {
     return `/webapi/index.php?app=meal&act=info_list`
   },
@@ -38,10 +32,10 @@ let getProjectMsg = (id) => {
  * @param {*} Shop_id  门店id
  */
 
-let getCartTime = (day,Shop_id) =>{
+let getCartTime = (day, Shop_id) => {
   return `/webapi/index.php?format=json&app=cart&act=time&day=${day}&shop_id=${Shop_id}`
 }
-let getShop = () =>{
+let getShop = () => {
   return '/webapi/index.php?format=json&app=shop&act=get_info'
 }
 
@@ -73,7 +67,9 @@ let getHotProject = () => {
  * @param {*} page_size
  */
 let getProjectItems = (shop_id, pageNo = 1, page_size = 10) => {
-  return `/webapi/index.php?app=project&act=info_list&page_no=${pageNo}&page_size=${page_size}${shop_id? '&shop_'+shop_id:''}`
+  return `/webapi/index.php?app=project&act=info_list&page_no=${pageNo}&page_size=${page_size}${shop_id
+    ? '&shop_' + shop_id
+    : ''}`
 
 }
 // 项目详情
@@ -87,8 +83,6 @@ let getProjectDet = (id) => {
 let getMealList = () => {
   return `/webapi/index.php?app=meal&act=info_list`
 }
-
-
 
 // 评价接口
 // 可传参数
@@ -108,134 +102,856 @@ let getComment = () => {
 }
 let getBjpk = () => {
   return {
-    lmp:{code:0,name:'两面盘',body:[
-      {
-    _name:"冠亚军和",
-    list:[{name:"大",odds:2.19,key_s:"ip_3017"},{name:"小",odds:1.78,key_s:"ip_3018"},{name:"单",odds:1.78,key_s:"ip_3019"},{name:"双",odds:2.19,key_s:"ip_3020"}]
-  },
-
-    {
-        _name:"冠军",
-        list:[{name:"大",odds:1.990,key_s:"ip_3001-3011"},{name:"小",odds:1.990,key_s:"ip_3001-3012"},{name:"单",odds:1.990,key_s:"ip_3001-3013"},{name:"双",odds:1.990,key_s:"ip_3001-3014"},{name:"龙",odds:1.990,key_s:"ip_3001-3015"},{name:"虎",odds:1.990,key_s:"ip_3001-3016"}]
-    },
-
-    {
-        _name:"亚军",
-        list:[{name:"大",odds:1.990,key_s:"ip_3002-3011"},{name:"小",odds:1.990,key_s:"ip_3002-3012"},{name:"单",odds:1.990,key_s:"ip_3002-3013"},{name:"双",odds:1.990,key_s:"ip_3002-3014"},{name:"龙",odds:1.990,key_s:"ip_3002-3015"},{name:"虎",odds:1.990,key_s:"ip_3002-3016"}]
-    },
-
-    {
-        _name:"第三名",
-        list:[{name:"大",odds:1.990,key_s:"ip_3003-3011"},{name:"小",odds:1.990,key_s:"ip_3003-3012"},{name:"单",odds:1.990,key_s:"ip_3003-3013"},{name:"双",odds:1.990,key_s:"ip_3003-3014"},{name:"龙",odds:1.990,key_s:"ip_3003-3015"},{name:"虎",odds:1.990,key_s:"ip_3003-3016"}]
-    },
-
-    {
-        _name:"第四名",
-        list:[{name:"大",odds:1.990,key_s:"ip_3004-3011"},{name:"小",odds:1.990,key_s:"ip_3004-3012"},{name:"单",odds:1.990,key_s:"ip_3004-3013"},{name:"双",odds:1.990,key_s:"ip_3004-3014"},{name:"龙",odds:1.990,key_s:"ip_3004-3015"},{name:"虎",odds:1.990,key_s:"ip_3004-3016"}]
-    },
-
-    {
-        _name:"第五名",
-        list:[{name:"大",odds:1.990,key_s:"ip_3005-3011"},{name:"小",odds:1.990,key_s:"ip_3005-3012"},{name:"单",odds:1.990,key_s:"ip_3005-3013"},{name:"双",odds:1.990,key_s:"ip_3005-3014"},{name:"龙",odds:1.990,key_s:"ip_3005-3015"},{name:"虎",odds:1.990,key_s:"ip_3005-3016"}]
-    },
-
-    {
-        _name:"第六名",
-        list:[{name:"大",odds:1.990,key_s:"ip_3006-3011"},{name:"小",odds:1.990,key_s:"ip_3006-3012"},{name:"单",odds:1.990,key_s:"ip_3006-3013"},{name:"双",odds:1.990,key_s:"ip_3006-3014"}]
-    },
-
-    {
-        _name:"第七名",
-        list:[{name:"大",odds:1.990,key_s:"ip_3007-3011"},{name:"小",odds:1.990,key_s:"ip_3007-3012"},{name:"单",odds:1.990,key_s:"ip_3007-3013"},{name:"双",odds:1.990,key_s:"ip_3007-3014"}]
-    },
-    {
-        _name:"第八名",
-        list:[{name:"大",odds:1.990,key_s:"ip_3008-3011"},{name:"小",odds:1.990,key_s:"ip_3008-3012"},{name:"单",odds:1.990,key_s:"ip_3008-3013"},{name:"双",odds:1.990,key_s:"ip_3008-3014"}]
-    },
-    {
-        _name:"第九名",
-        list:[{name:"大",odds:1.990,key_s:"ip_3009-3011"},{name:"小",odds:1.990,key_s:"ip_3009-3012"},{name:"单",odds:1.990,key_s:"ip_3009-3013"},{name:"双",odds:1.990,key_s:"ip_3009-3014"}]
-    },
-
-    {
-        _name:"第十名",
-        list:[{name:"大",odds:1.990,key_s:"ip_3010-3011"},{name:"小",odds:1.990,key_s:"ip_3010-3012"},{name:"单",odds:1.990,key_s:"ip_3010-3013"},{name:"双",odds:1.990,key_s:"ip_3010-3014"}]
-    }
-  ]
-},
- gyh:{code:1,name:'冠、亚军组合',body:[{
-        _name:"冠亚军和",
-        list:[{name:"3",odds:42.5,key_s:"ip_3021-3"},
-          {name:"4",odds:42.5,key_s:"ip_3021-4"},
-          {name:"5",odds:1.78,key_s:"ip_3021-5"},
-          {name:"6",odds:2.19,key_s:"ip_3021-6"},
-          {name:"7",odds:1.78,key_s:"ip_3021-7"},
-          {name:"8",odds:1.78,key_s:"ip_3021-8"},
-          {name:"9",odds:2.19,key_s:"ip_3021-9"},
-          {name:"10",odds:1.78,key_s:"ip_3021-10"},
-          {name:"11",odds:1.78,key_s:"ip_3021-11"},
-          {name:"12",odds:2.19,key_s:"ip_3021-12"},
-          {name:"13",odds:1.78,key_s:"ip_3021-13"},
-          {name:"14",odds:1.78,key_s:"ip_3021-14"},
-          {name:"15",odds:2.19,key_s:"ip_3021-15"},
-          {name:"16",odds:1.78,key_s:"ip_3021-16"},
-          {name:"17",odds:1.78,key_s:"ip_3021-17"},
-          {name:"18",odds:2.19,key_s:"ip_3021-18"},
-          {name:"19",odds:1.78,key_s:"ip_3021-19"}
-          ]},
+    code: 0,
+    lmp: {
+      code: 0,
+      name: '两面盘',
+      body: [
         {
-          _name:"冠亚军和-两面",
-          list:[
-            {name:"大",odds:2.19,key_s:"ip_3017"},
-            {name:"小",odds:1.78,key_s:"ip_3018"},
-            {name:"单",odds:1.78,key_s:"ip_3019"},
-            {name:"双",odds:2.19,key_s:"ip_3020"}
-        ]}]},
- yzw:{code:2,name:'一至五名',body:[{
-      _name:"冠军",
-      list:[{name:"1",odds:9.90,key_s:"ip_3001-1"},{name:"2",odds:9.90,key_s:"ip_3001-2"},{name:"3",odds:9.90,key_s:"ip_3001-3"},{name:"4",odds:9.90,key_s:"ip_3001-4"},{name:"5",odds:9.90,key_s:"ip_3001-5"},{name:"6",odds:9.90,key_s:"ip_3001-6"},{name:"7",odds:9.90,key_s:"ip_3001-7"},{name:"8",odds:9.90,key_s:"ip_3001-8"},{name:"9",odds:9.90,key_s:"ip_3001-9"},{name:"10",odds:9.90,key_s:"ip_3001-10"}]
+          _name: "冠亚军和",
+          list: [
+            {
+              name: "大",
+              odds: 2.19,
+              key_s: "ip_3017"
+            }, {
+              name: "小",
+              odds: 1.78,
+              key_s: "ip_3018"
+            }, {
+              name: "单",
+              odds: 1.78,
+              key_s: "ip_3019"
+            }, {
+              name: "双",
+              odds: 2.19,
+              key_s: "ip_3020"
+            }
+          ]
+        }, {
+          _name: "冠军",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3001-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3001-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3001-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3001-3014"
+            }, {
+              name: "龙",
+              odds: 1.990,
+              key_s: "ip_3001-3015"
+            }, {
+              name: "虎",
+              odds: 1.990,
+              key_s: "ip_3001-3016"
+            }
+          ]
+        }, {
+          _name: "亚军",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3002-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3002-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3002-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3002-3014"
+            }, {
+              name: "龙",
+              odds: 1.990,
+              key_s: "ip_3002-3015"
+            }, {
+              name: "虎",
+              odds: 1.990,
+              key_s: "ip_3002-3016"
+            }
+          ]
+        }, {
+          _name: "第三名",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3003-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3003-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3003-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3003-3014"
+            }, {
+              name: "龙",
+              odds: 1.990,
+              key_s: "ip_3003-3015"
+            }, {
+              name: "虎",
+              odds: 1.990,
+              key_s: "ip_3003-3016"
+            }
+          ]
+        }, {
+          _name: "第四名",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3004-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3004-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3004-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3004-3014"
+            }, {
+              name: "龙",
+              odds: 1.990,
+              key_s: "ip_3004-3015"
+            }, {
+              name: "虎",
+              odds: 1.990,
+              key_s: "ip_3004-3016"
+            }
+          ]
+        }, {
+          _name: "第五名",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3005-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3005-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3005-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3005-3014"
+            }, {
+              name: "龙",
+              odds: 1.990,
+              key_s: "ip_3005-3015"
+            }, {
+              name: "虎",
+              odds: 1.990,
+              key_s: "ip_3005-3016"
+            }
+          ]
+        }, {
+          _name: "第六名",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3006-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3006-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3006-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3006-3014"
+            }
+          ]
+        }, {
+          _name: "第七名",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3007-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3007-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3007-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3007-3014"
+            }
+          ]
+        }, {
+          _name: "第八名",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3008-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3008-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3008-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3008-3014"
+            }
+          ]
+        }, {
+          _name: "第九名",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3009-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3009-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3009-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3009-3014"
+            }
+          ]
+        }, {
+          _name: "第十名",
+          list: [
+            {
+              name: "大",
+              odds: 1.990,
+              key_s: "ip_3010-3011"
+            }, {
+              name: "小",
+              odds: 1.990,
+              key_s: "ip_3010-3012"
+            }, {
+              name: "单",
+              odds: 1.990,
+              key_s: "ip_3010-3013"
+            }, {
+              name: "双",
+              odds: 1.990,
+              key_s: "ip_3010-3014"
+            }
+          ]
+        }
+      ]
     },
-    {
-      _name:"亚军",
-      list:[{name:"1",odds:9.90,key_s:"ip_3002-1"},{name:"2",odds:9.90,key_s:"ip_3002-2"},{name:"3",odds:9.90,key_s:"ip_3002-3"},{name:"4",odds:9.90,key_s:"ip_3002-4"},{name:"5",odds:9.90,key_s:"ip_3002-5"},{name:"6",odds:9.90,key_s:"ip_3002-6"},{name:"7",odds:9.90,key_s:"ip_3002-7"},{name:"8",odds:9.90,key_s:"ip_3002-8"},{name:"9",odds:9.90,key_s:"ip_3002-9"},{name:"10",odds:9.90,key_s:"ip_3002-10"}]
-    },
-    {
-      _name:"第三名",
-      list:[{name:"1",odds:9.90,key_s:"ip_3003-1"},{name:"2",odds:9.90,key_s:"ip_3003-2"},{name:"3",odds:9.90,key_s:"ip_3003-3"},{name:"4",odds:9.90,key_s:"ip_3003-4"},{name:"5",odds:9.90,key_s:"ip_3003-5"},{name:"6",odds:9.90,key_s:"ip_3003-6"},{name:"7",odds:9.90,key_s:"ip_3003-7"},{name:"8",odds:9.90,key_s:"ip_3003-8"},{name:"9",odds:9.90,key_s:"ip_3003-9"},{name:"10",odds:9.90,key_s:"ip_3003-10"}]
-    },
-    {
-      _name:"第四名",
-      list:[{name:"1",odds:9.90,key_s:"ip_3004-1"},{name:"2",odds:9.90,key_s:"ip_3004-2"},{name:"3",odds:9.90,key_s:"ip_3004-3"},{name:"4",odds:9.90,key_s:"ip_3004-4"},{name:"5",odds:9.90,key_s:"ip_3004-5"},{name:"6",odds:9.90,key_s:"ip_3004-6"},{name:"7",odds:9.90,key_s:"ip_3004-7"},{name:"8",odds:9.90,key_s:"ip_3004-8"},{name:"9",odds:9.90,key_s:"ip_3004-9"},{name:"10",odds:9.90,key_s:"ip_3004-10"}]
-    },
-    {
-      _name:"第五名",
-      list:[{name:"1",odds:9.90,key_s:"ip_3005-1"},{name:"2",odds:9.90,key_s:"ip_3005-2"},{name:"3",odds:9.90,key_s:"ip_3005-3"},{name:"4",odds:9.90,key_s:"ip_3005-4"},{name:"5",odds:9.90,key_s:"ip_3005-5"},{name:"6",odds:9.90,key_s:"ip_3005-6"},{name:"7",odds:9.90,key_s:"ip_3005-7"},{name:"8",odds:9.90,key_s:"ip_3005-8"},{name:"9",odds:9.90,key_s:"ip_3005-9"},{name:"10",odds:9.90,key_s:"ip_3005-10"}]
-    }]
+    gyh: {
+      code: 1,
+      name: '冠、亚军组合',
+      body: [
+        {
+          _name: "冠亚军和",
+          list: [
 
- },
- lzs:{code:2,name:'六至十名',body:[{
-      _name:"第六名",
-      list:[{name:"1",odds:9.90,key_s:"ip_3006-1"},{name:"2",odds:9.90,key_s:"ip_3006-2"},{name:"3",odds:9.90,key_s:"ip_3006-3"},{name:"4",odds:9.90,key_s:"ip_3006-4"},{name:"5",odds:9.90,key_s:"ip_3006-5"},{name:"6",odds:9.90,key_s:"ip_3006-6"},{name:"7",odds:9.90,key_s:"ip_3006-7"},{name:"8",odds:9.90,key_s:"ip_3006-8"},{name:"9",odds:9.90,key_s:"ip_3006-9"},{name:"10",odds:9.90,key_s:"ip_3006-10"}]
-    },
-    {
-      _name:"第七名",
-      list:[{name:"1",odds:9.90,key_s:"ip_3007-1"},{name:"2",odds:9.90,key_s:"ip_3007-2"},{name:"3",odds:9.90,key_s:"ip_3007-3"},{name:"4",odds:9.90,key_s:"ip_3007-4"},{name:"5",odds:9.90,key_s:"ip_3007-5"},{name:"6",odds:9.90,key_s:"ip_3007-6"},{name:"7",odds:9.90,key_s:"ip_3007-7"},{name:"8",odds:9.90,key_s:"ip_3007-8"},{name:"9",odds:9.90,key_s:"ip_3007-9"},{name:"10",odds:9.90,key_s:"ip_3007-10"}]
-    },
-    {
-      _name:"第八名",
-      list:[{name:"1",odds:9.90,key_s:"ip_3008-1"},{name:"2",odds:9.90,key_s:"ip_3008-2"},{name:"3",odds:9.90,key_s:"ip_3008-3"},{name:"4",odds:9.90,key_s:"ip_3008-4"},{name:"5",odds:9.90,key_s:"ip_3008-5"},{name:"6",odds:9.90,key_s:"ip_3008-6"},{name:"7",odds:9.90,key_s:"ip_3008-7"},{name:"8",odds:9.90,key_s:"ip_3008-8"},{name:"9",odds:9.90,key_s:"ip_3008-9"},{name:"10",odds:9.90,key_s:"ip_3008-10"}]
-    },
-    {
-      _name:"第九名",
-      list:[{name:"1",odds:9.90,key_s:"ip_3009-1"},{name:"2",odds:9.90,key_s:"ip_3009-2"},{name:"3",odds:9.90,key_s:"ip_3009-3"},{name:"4",odds:9.90,key_s:"ip_3009-4"},{name:"5",odds:9.90,key_s:"ip_3009-5"},{name:"6",odds:9.90,key_s:"ip_3009-6"},{name:"7",odds:9.90,key_s:"ip_3009-7"},{name:"8",odds:9.90,key_s:"ip_3009-8"},{name:"9",odds:9.90,key_s:"ip_3009-9"},{name:"10",odds:9.90,key_s:"ip_3009-10"}]
-    },
-    {
-      _name:"第十名",
-      list:[{name:"1",odds:9.90,key_s:"ip_3010-1"},{name:"2",odds:9.90,key_s:"ip_3010-2"},{name:"3",odds:9.90,key_s:"ip_3010-3"},{name:"4",odds:9.90,key_s:"ip_3010-4"},{name:"5",odds:9.90,key_s:"ip_3010-5"},{name:"6",odds:9.90,key_s:"ip_3010-6"},{name:"7",odds:9.90,key_s:"ip_3010-7"},{name:"8",odds:9.90,key_s:"ip_3010-8"},{name:"9",odds:9.90,key_s:"ip_3010-9"},{name:"10",odds:9.90,key_s:"ip_3010-10"}]
-    }]}
+            {
+              name: "3",
+              odds: 42.5,
+              key_s: "ip_3021-3"
+            }, {
+              name: "4",
+              odds: 42.5,
+              key_s: "ip_3021-4"
+            }, {
+              name: "5",
+              odds: 1.78,
+              key_s: "ip_3021-5"
+            }, {
+              name: "6",
+              odds: 2.19,
+              key_s: "ip_3021-6"
+            }, {
+              name: "7",
+              odds: 1.78,
+              key_s: "ip_3021-7"
+            }, {
+              name: "8",
+              odds: 1.78,
+              key_s: "ip_3021-8"
+            }, {
+              name: "9",
+              odds: 2.19,
+              key_s: "ip_3021-9"
+            }, {
+              name: "10",
+              odds: 1.78,
+              key_s: "ip_3021-10"
+            }, {
+              name: "11",
+              odds: 1.78,
+              key_s: "ip_3021-11"
+            }, {
+              name: "12",
+              odds: 2.19,
+              key_s: "ip_3021-12"
+            }, {
+              name: "13",
+              odds: 1.78,
+              key_s: "ip_3021-13"
+            }, {
+              name: "14",
+              odds: 1.78,
+              key_s: "ip_3021-14"
+            }, {
+              name: "15",
+              odds: 2.19,
+              key_s: "ip_3021-15"
+            }, {
+              name: "16",
+              odds: 1.78,
+              key_s: "ip_3021-16"
+            }, {
+              name: "17",
+              odds: 1.78,
+              key_s: "ip_3021-17"
+            }, {
+              name: "18",
+              odds: 2.19,
+              key_s: "ip_3021-18"
+            }, {
+              name: "19",
+              odds: 1.78,
+              key_s: "ip_3021-19"
+            }
 
+          ]
+        }, {
+          _name: "冠亚军和-两面",
+          list: [
+            {
+              name: "大",
+              odds: 2.19,
+              key_s: "ip_3017"
+            }, {
+              name: "小",
+              odds: 1.78,
+              key_s: "ip_3018"
+            }, {
+              name: "单",
+              odds: 1.78,
+              key_s: "ip_3019"
+            }, {
+              name: "双",
+              odds: 2.19,
+              key_s: "ip_3020"
+            }
+          ]
+        }
+      ]
+    },
+    yzw: {
+      code: 2,
+      name: '一至五名',
+      body: [
+        {
+          _name: "冠军",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3001-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3001-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3001-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3001-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3001-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3001-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3001-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3001-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3001-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3001-10"
+            }
+          ]
+        }, {
+          _name: "亚军",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3002-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3002-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3002-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3002-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3002-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3002-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3002-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3002-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3002-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3002-10"
+            }
+          ]
+        }, {
+          _name: "第三名",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3003-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3003-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3003-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3003-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3003-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3003-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3003-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3003-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3003-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3003-10"
+            }
+          ]
+        }, {
+          _name: "第四名",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3004-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3004-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3004-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3004-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3004-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3004-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3004-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3004-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3004-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3004-10"
+            }
+          ]
+        }, {
+          _name: "第五名",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3005-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3005-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3005-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3005-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3005-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3005-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3005-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3005-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3005-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3005-10"
+            }
+          ]
+        }
+      ]
 
-}}
+    },
+    lzs: {
+      code: 2,
+      name: '六至十名',
+      body: [
+        {
+          _name: "第六名",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3006-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3006-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3006-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3006-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3006-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3006-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3006-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3006-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3006-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3006-10"
+            }
+          ]
+        }, {
+          _name: "第七名",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3007-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3007-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3007-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3007-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3007-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3007-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3007-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3007-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3007-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3007-10"
+            }
+          ]
+        }, {
+          _name: "第八名",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3008-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3008-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3008-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3008-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3008-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3008-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3008-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3008-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3008-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3008-10"
+            }
+          ]
+        }, {
+          _name: "第九名",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3009-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3009-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3009-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3009-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3009-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3009-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3009-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3009-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3009-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3009-10"
+            }
+          ]
+        }, {
+          _name: "第十名",
+          list: [
+            {
+              name: "1",
+              odds: 9.90,
+              key_s: "ip_3010-1"
+            }, {
+              name: "2",
+              odds: 9.90,
+              key_s: "ip_3010-2"
+            }, {
+              name: "3",
+              odds: 9.90,
+              key_s: "ip_3010-3"
+            }, {
+              name: "4",
+              odds: 9.90,
+              key_s: "ip_3010-4"
+            }, {
+              name: "5",
+              odds: 9.90,
+              key_s: "ip_3010-5"
+            }, {
+              name: "6",
+              odds: 9.90,
+              key_s: "ip_3010-6"
+            }, {
+              name: "7",
+              odds: 9.90,
+              key_s: "ip_3010-7"
+            }, {
+              name: "8",
+              odds: 9.90,
+              key_s: "ip_3010-8"
+            }, {
+              name: "9",
+              odds: 9.90,
+              key_s: "ip_3010-9"
+            }, {
+              name: "10",
+              odds: 9.90,
+              key_s: "ip_3010-10"
+            }
+          ]
+        }
+      ]
+    }
+
+  }
+}
 let getLogin = () => {
   return 'http://jmyl888.com/newapi/GetLogin'
 }
@@ -243,15 +959,14 @@ let getPeilv = () => {
   return 'http://jmyl888.com/newapi/GetTime'
 }
 let getUid = () => {
- let a = sessionStorage.getItem('im_token')
- if(a){
-   console.log(a);
-   let b = a.length-2
-  return a.substr(1,b)
- }
- else{
-  return false
- }
+  let a = sessionStorage.getItem('im_token')
+  if (a) {
+    console.log(a);
+    let b = a.length - 2
+    return a.substr(1, b)
+  } else {
+    return false
+  }
 
 }
 // 进入用户中心
@@ -271,7 +986,6 @@ let getmyMealdetails = (order_sn) => {
 let loginTrue = () => {
   return '/webapi/index.php?format=json&app=meal&act=check_login&source=h5'
 }
-
 
 // let loginTrue = () => {
 //   let api = '/webapi/index.php?format=json&app=meal&act=check_login&source=h5';
@@ -372,6 +1086,5 @@ export {
   // 收藏列表
   favorite,
 
-  getBjpk,
-
+  getBjpk
 }
