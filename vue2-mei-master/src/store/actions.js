@@ -42,6 +42,18 @@ export default {
 	},
 	hideDailogQ:({ commit} ) =>{
 			commit(types.HIDDE_DAILOGQ);
+	},
+	showDailogS:({ commit} ) =>{
+			commit(types.SHOW_DAILOGS);
+	},
+	hideDailogS:({ commit} ) =>{
+			commit(types.HIDDE_DAILOGS);
+	},
+	showDailogW:({ commit} ) =>{
+			commit(types.SHOW_DAILOGW);
+	},
+	hideDailogW:({ commit} ) =>{
+			commit(types.HIDDE_DAILOGW);
 	}
 
 }

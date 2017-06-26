@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  
+
     <div class='view'>
       <!--<transition name='fade'>-->
       <transition :name="transitionName">
@@ -9,7 +9,7 @@
         <!--</keep-alive>-->
       </transition>
     </div>
-  
+
   </div>
 </template>
 
@@ -83,14 +83,14 @@ export default {
 .child-view {
   position: absolute;
   width: 100%; // transition: all .3s cubic-bezier(.55, 0, .1, 1);
-  transition: all .3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 
 /*动画*/
 
 .fade-enter-active {
-  transition: opacity .3s;
+  transition: opacity 0.2s;
 }
 
 .fade-enter,

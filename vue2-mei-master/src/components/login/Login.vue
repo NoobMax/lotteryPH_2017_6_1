@@ -76,7 +76,7 @@ export default {
 
     //        验证账号
     verifyPhone(phone) {
-      if (!(/^(?![0-9]+$)\w{4,16}$/.test(phone))) {
+      if (!(/^(?![0-9]+$)\w{5,14}$/.test(phone))) {
         this.errormsg = '账号有误，请检查！';
         return false;
       } else {
@@ -87,7 +87,7 @@ export default {
     //      验证密码
     verifyVrifyCode(code) {
       //  以字母开头，长度在6~18之间
-      if (!(/^[a-zA-Z]\w{5,17}$/.test(code))) {
+      if (!(/^[a-zA-Z]\w{5,14}$/.test(code))) {
         this.passWordE = '验证码有误，请检查！'; // 规则不正确验证
         return false;
       } else {
@@ -133,19 +133,20 @@ export default {
 
           }
         }
-        this.$http.get(getLogin(),params).then( res=>{
+        this.$http.post(getLogin(),JSON.stringify(params.params)).then( res=>{
           // let
           // let  im_token,is_new,is_send,error
               console.log(res.data)
-         if (res.data.error_no == 32) { // 0 代表成功获取token
+         if (res.data.oid) { // 0 代表成功获取token
             this.errormsg = '';
             this.passWordE = ''
             console.log('登陆成功')
             // console.log(d) // token
 
               // 将数据存在sessionStorage 中
-              sessionStorage.setItem('im_token', JSON.stringify(res.data.uid))
-              console.log( sessionStorage.getItem('im_token'))
+              sessionStorage.setItem('im_token', JSON.stringify(res.data.oid))
+              sessionStorage.setItem('im_money', JSON.stringify(res.data.money))
+              console.log( sessionStorage.getItem('im_money'))
               this.$store.dispatch('loginYes')
               window.history.go(-1)  // 返回个人中心
 

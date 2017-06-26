@@ -11,7 +11,11 @@ import {
   SHOW_DRAWER,
   HIDDE_DRAWER,
   SHOW_DAILOGQ,
-  HIDDE_DAILOGQ
+  HIDDE_DAILOGQ,
+  SHOW_DAILOGS,
+  HIDDE_DAILOGS,
+  SHOW_DAILOGW,
+  HIDDE_DAILOGW
 } from './mutation_types.js'
 
 // 1 : 定义默认的 监测状态
@@ -21,7 +25,9 @@ const state = {
   goBack: false, //　是否是后退状态　默认不是
   login:false, // 登陆状态
   showDrawer:false,
-  showDailogQ:false
+  showDailogQ:false,
+  showDailogS:false,
+  showDailogW:false
 }
 
 const mutations = {
@@ -61,6 +67,18 @@ const mutations = {
   },
   [HIDDE_DAILOGQ](state){
     state.showDailogQ=false;
+  },
+  [SHOW_DAILOGS](state){
+    state.showDailogS=true;
+  },
+  [HIDDE_DAILOGS](state){
+    state.showDailogS=false;
+  },
+  [SHOW_DAILOGW](state){
+    state.showDailogW=true;
+  },
+  [HIDDE_DAILOGW](state){
+    state.showDailogW=false;
   }
 
 };
@@ -85,6 +103,12 @@ const getters = {
   },
   showDailogQ(state){
     return state.showDailogQ
+  },
+  showDailogS(state){
+    return state.showDailogS
+  },
+  showDailogW(state){
+    return state.showDailogW
   }
 
 }
